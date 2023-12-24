@@ -1,0 +1,138 @@
+/*----index.html----*/
+:root [animation="jc"]{
+    animation: jcani 2s;
+}
+:root [animation="jc-2"]{
+    animation: jcani 4s;
+}
+:root [tra="true"]{
+    transition: all 0.3s;
+}
+@keyframes jcani {
+    0%{
+        opacity: 0;
+        transform: translate(0,-10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+/*--菜单栏--*/
+.navbar{
+    width: 100%;
+    height: 60px;
+    background-color: rgba(20, 20, 20, 0.404);
+    position: fixed;
+    left: 0;
+    top: 0;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    z-index: 999;
+    backdrop-filter: blur(5px);
+}
+.navbar img{
+    margin-left: 13%;
+    margin-right: 40%;
+    font-weight: 400;
+    
+}
+.navbar a{
+    padding: 14px 20px;
+    text-decoration: none;
+    color: aliceblue;
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+.navbar a:hover{
+    background-color: rgba(255, 255, 255, 0.384);
+}
+.lant{
+    display: none;
+}
+/*--内容区域--*/
+.text{
+    width: 100%;
+    min-height: 700px;
+    background-color: rgba(20, 20, 20, 0.356);
+    position: absolute;
+    left: 0;
+    top: 60px;
+    z-index: 1;
+    color: aliceblue;
+}
+.ti-zao{
+    width: 100%;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.ti-zao h1{
+    font-size: 5em;
+}
+.ti-zao  p{
+    font-size: 2em;
+}
+.ti-js{
+    width: calc(100% - 100px);
+    height: 95vh;
+    background-color: rgba(172, 172, 172, 0);
+    font-size: 2em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    transition: all 1.6s;
+}
+.ti-js h1{
+    margin: 30px;
+}
+.ti-js p{
+    margin-left: 40px ;
+}
+.tz-btn{
+    min-width: 120px;
+    height: 75px;
+    font-size: 0.7em;
+    margin-left: 75%;
+    border: none;
+    color: aliceblue;
+    background-color: rgba(0, 0, 0, 0.322);
+    border-radius: 12px;
+    transition: all .3s;
+}
+.tz-btn:hover{
+    background-color: rgba(0, 0, 0, 0.671);
+    transform: scale(1.02);
+}
+.tz-btn:active{
+    transform: scale(0.98);
+}
+/*card*/
+.card-zu{
+    width: 100%;
+    min-height: 200px;
+    background-color: rgb(31, 31, 31);
+    color: rgb(224, 224, 224);
+}
+.muban{
+    width:80%;
+    min-height: 100px;
+    margin:0 auto;
+    background-color: rgb(36, 36, 36);
+}
+
+.muban a{
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: rgb(94, 94, 94);
+    color: aliceblue;
+    transition: all 0.2s;
+}
+.muban a:hover{
+    background-color: rgba(240, 248, 255, 0.432);
+}

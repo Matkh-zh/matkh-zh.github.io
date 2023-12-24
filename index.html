@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ZAO</title>
+        <link rel="shortcut icon" href="ZAO.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel ="stylesheet" media="screen and (min-width: 1000px)" href="css/one.css">
+    <link rel ="stylesheet" media="screen and (max-width: 999px)" href="css/onem.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <img src="ZAO.png" alt="ZAO" width="60px" height="60px" onclick="cdlan()">
+            <a href="doc.html">有用的码</a>
+            <a href="dow.html">一些模板</a>
+            <a href="covim.html">zao项目</a>
+        </div>
+        <div class="lant" id="lan" style="left: -1200px;">
+            <a href="doc.html">有用的码</a>
+            <a href="dow.html">一些模板</a>
+            <a href="covim.html">zao项目</a>
+        </div>
+        <!--text-->
+        <div class="text">
+       <div class="ti-zao">
+         <h1 animation="jc">藏獒的页面</h1> 
+         <p id="poem-title" animation="jc-2"></p>
+         <script src="js/meiju.js"></script>
+        </div>
+        <div class="ti-js">
+            <h1>重新出发<br>心有所想</h1>
+            <p>我与设计的多重碰撞，敢想敢做</p>
+            <button class="tz-btn" onclick="window.location.href = 'dow.html'">我的项目组</button>
+        </div>
+    </div>
+    </body>
+    <script>
+    let lan = document.getElementById('lan');
+        function cdlan(){
+            if(lan.style.left === '-1200px'){
+                lan.style.left = '0';
+            }else{
+                lan.style.left = '-1200px';
+            }
+        }
+        var box = document.querySelector(".ti-js");
+            window.onscroll = function() {
+                var top = document.documentElement.scrollTop || document.body.scrollTop;
+                if(top > (box.offsetTop - box.offsetHeight)) {
+                    box.style.opacity = '1';
+                }else{
+                    box.style.opacity = '0';
+                }
+            }
+    </script>
+</html>

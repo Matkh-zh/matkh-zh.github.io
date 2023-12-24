@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ZAO 模板</title>
+        <link rel="shortcut icon" href="ZAO.png">
+        <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel ="stylesheet" media="screen and (min-width: 1000px)" href="css/one.css">
+    <link rel ="stylesheet" media="screen and (max-width: 999px)" href="css/onem.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <img src="ZAO.png" alt="ZAO" width="60px" height="60px" onclick="cdlan()">
+            <a href="doc.html">有用的码</a>
+            <a href="dow.html">一些模板</a>
+            <a href="covim.html">zao项目</a>
+            <a href="index.html">回到主页</a>
+        </div>
+        <div class="lant" id="lan" style="left: -1200px;">
+            <a href="doc.html">有用的码</a>
+            <a href="dow.html">一些模板</a>
+            <a href="covim.html">zao项目</a>
+            <a href="index.html">回到主页</a>
+        </div>
+        <div class="text">
+            <div class="muban">
+            <h1>模板1-侧边栏</h1>
+            
+            <a onclick="location.href= 'muban/n.htm'">浏览</a>
+            <a href="muban/n.htm" download="muban/n.htm">下载</a>
+            </div>
+        </div>
+    </body>
+    <script>
+    let lan = document.getElementById('lan');
+        function cdlan(){
+            if(lan.style.left === '-1200px'){
+                lan.style.left = '0';
+            }else{
+                lan.style.left = '-1200px';
+            }
+        }
+    </script>
+</html>

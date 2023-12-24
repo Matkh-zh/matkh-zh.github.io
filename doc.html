@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ZAO css</title>
+        <link rel="shortcut icon" href="ZAO.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel ="stylesheet" media="screen and (min-width: 1000px)" href="css/one.css">
+    <link rel ="stylesheet" media="screen and (max-width: 999px)" href="css/onem.css">
+    </head>
+    <style>
+        @font-face {
+            font-family: consola;
+            src: url(css/consola-1.ttf);
+        }
+        code{
+            font-family: consola;
+        }
+    </style>
+    <body>
+        <div class="navbar">
+            <img src="ZAO.png" alt="ZAO" width="60px" height="60px" onclick="cdlan()">
+            <a href="doc.html">有用的码</a>
+            <a href="dow.html">一些模板</a>
+            <a href="covim.html">zao项目</a>
+            <a href="index.html">回到主页</a>
+        </div>
+        <div class="lant" id="lan" style="left: -1200px;">
+            <a href="doc.html">有用的码</a>
+            <a href="dow.html">一些模板</a>
+            <a href="covim.html">zao项目</a>
+            <a href="index.html">回到主页</a>
+        </div>
+        <div class="text">
+            <div class="card-zu">
+                <h1>高考加油！--js倒计时</h1> 
+                <code>
+                    function updateCountdown() {<br>
+                        var targetDate = new Date("2024-06-07 9:00:00");<br>
+                        var currentDate = new Date();<br>
+                        var remainingTime = targetDate - currentDate;<br>
+                        var days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));<br>
+                        var hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));<br>
+                        var minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));<br>
+                        var seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);<br>
+                        var countdownElement = document.getElementById("countdown");<br>
+                        countdownElement.innerHTML ="距离高考还有"+ days + " 天 " + hours + " 小时 " + minutes + " 分钟 " + seconds + " 秒 ";<br>
+                        if (remainingTime <= 0) {<br>
+                          clearInterval(countdownTimer);<br>
+                          countdownElement.innerHTML = "高考加油！！！";<br>
+                        }<br>
+                      }<br>
+                      var countdownTimer = setInterval(updateCountdown, 1000);<br>
+                </code>
+            </div>
+            <div class="card-zu">
+                <h1>实时时间</h1>
+                <code>
+                    var clockElement = document.getElementById("clock");<br>
+function updateClock() {<br>
+  var now = new Date();<br>
+  var hours = now.getHours();<br>
+  var minutes = now.getMinutes();<br>
+  var seconds = now.getSeconds();<br>
+  <br>
+  var formattedTime = hours.toString().padStart(2, "0") + ":" + minutes.toString().padStart(2, "0") + ":" +
+    seconds.toString().padStart(2, "0");<br>
+  clockElement.textContent = formattedTime;<br>
+}<br>
+<br>
+setInterval(updateClock, 1000);<br>
+                </code>
+            </div>
+        </div>
+    </body>
+    <script>
+    let lan = document.getElementById('lan');
+        function cdlan(){
+            if(lan.style.left === '-1200px'){
+                lan.style.left = '0';
+            }else{
+                lan.style.left = '-1200px';
+            }
+        }
+    </script>
+</html>
