@@ -1,0 +1,214 @@
+/*head*/
+:root{
+    overflow-x: hidden;
+}
+@font-face {
+    font-family: consola;
+    src: url(consola-1.ttf);
+}
+.nav{
+    width: 70px;
+    height: 100vh;
+    background-color: rgb(24, 24, 24);
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all .2s;
+    overflow: hidden;
+    z-index: 999;
+}
+.nav img{
+    margin: 15px;
+}
+.nav h2{
+    display: none;
+}
+.nav a{
+    padding: 20px;
+    text-decoration: none;
+    font-size: 20pt;
+    color: rgb(255, 255, 255);
+    border-radius: 4pt;
+    transition: all 0.3s;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+.nav a:hover{
+    color: black;
+    background-color: rgb(255, 255, 255);
+}
+.nav:hover{
+    width: 200px;
+}
+span[peno]{
+    display: none;
+    opacity: 0;
+    animation: navtext .2s;
+    position: absolute;
+    left: 45pt;
+    font-size: 16pt;
+}
+.nav:hover span[peno]{
+    display: block;
+    opacity: 1;
+}
+@keyframes navtext {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.logo{
+    display: flex;
+    align-items: center;
+    font-size: 22pt;
+    color: aliceblue;
+}
+/*content*/
+.content{
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(224, 224, 224);
+    position: absolute;
+    top: 0;
+    left: 71px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+h1{
+    transform: translate(20px,0);
+}
+.su-box{
+    min-width: 500px;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.su-minibox{
+    width: 430px;
+    height: 430px;
+    background-color: rgb(51, 51, 51);
+    z-index: 2;
+    position: absolute;
+    transition: all .4s;
+    transform: translate(30px,30px) skew(-8deg);
+    color: aliceblue;
+    font-size:14pt;
+    font-family: consola;
+    animation: zero 2s ease-in-out;
+}
+.su-mini2{
+    width: 400px;
+    height: 400px;
+    background-color: rgba(247, 247, 247, 0.699);
+    transform: translate(-30px,-30px) skew(-8deg);
+    backdrop-filter: blur(2px);
+    animation: zero 2s ease-in-out;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .4s;
+}
+@keyframes zero {
+    0%{
+        backdrop-filter: blur(0px);
+        transform: none;
+    }
+}
+.su-minibox:hover{
+    z-index: 4;
+    background-color: rgba(51, 51, 51, 0.89);
+    backdrop-filter: blur(1px);
+    transform: none;
+}
+.su-mini2:hover{
+    z-index: 4;
+    background-color: rgba(243, 243, 243, 0.89);
+    backdrop-filter: blur(1px);
+    transform: none;
+}
+/*-csspage-*/
+.tit{
+    font-size: 30pt;
+}
+.mb-card{
+    width: 400px;
+    min-height: 200px;
+    background-color: rgb(59, 59, 59);
+    margin: 12px;
+    float: left;
+    padding: 10px;
+    font-size: 22pt;
+    color: aliceblue;
+    border-radius: 6px;
+}
+.yuen{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: aliceblue;
+    display: flex;
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    margin: 4px;
+    border: none;
+    color: black;
+}
+a{
+    text-decoration: none;
+}
+.code-card {
+    border-radius: 5px;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(54, 54, 54);
+    margin: 2px;
+    
+    
+}
+:root [code]{
+    font-family: consola;
+    font-weight: 550;
+}
+.text-blog{
+    width: 95%;
+    min-height: 400px;
+    background-color: rgb(240, 240, 240);
+    margin: 5px;
+    padding: 6px;
+    text-align: center;
+}
+.text-blog p{
+    text-align: start;
+    font-size: 22pt;
+}
+.site{
+    width: 98%;
+    min-height:200px;
+    background-color: rgb(250, 250, 250);
+}
+.site a{
+    padding: 22px 20px;
+    border-radius: 9px;
+    transition: all .3s;
+    color: #111;
+    border: 2px solid #111;
+}
+.site a:hover{
+    background-color: rgba(14, 14, 14, 0.582);
+    color: aliceblue;
+   
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="ZAO.png">
+    <link rel ="stylesheet" media="screen and (min-width: 1000px)" href="css/style.css">
+    <link rel ="stylesheet" media="screen and (max-width: 999px)" href="css/style-min.css">
+    <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>zao 代码</title>
+</head>
+<body>
+   <div class="nav">
+    <div class="logo"><img src="ZAO.png" alt="logo" width="40px" height="40px"><span peno>ZaoPage</span></div>
+      <div class="phbox1"></div>
+      <a href="index.html" class="fa fa-chevron-left"><span peno>代码记录</span></a>
+      <a href="csspage.html" class="fa fa-css3"><span peno>我的模板</span></a>
+      <a href="myblog.html" class="fa fa-newspaper-o"><span peno>我的博客</span></a>
+      <a href="websites.html" class="fa fa-link"><span peno>百藏网站</span></a>
+   </div>
+   <div class="content" style="display: block;">
+    <div class="code-card">
+      <h2>高考倒计时</h2>
+      <pre>
+        <button onclick="copyToClipboard()">复制</button>
+        <h3>Javascript</h3>
+          <code code id="code">
+            
+            function updateCountdown() {
+              var targetDate = new Date("2024-06-07 9:00:00");
+              var currentDate = new Date();
+              var remainingTime = targetDate - currentDate;
+              var days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+              var hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+              var minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+              var seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+              var countdownElement = document.getElementById("countdown");
+              countdownElement.innerHTML ="距离高考还有"+ days + " 天 " + hours + " 小时 " + minutes + " 分钟 " + seconds + " 秒 ";
+              if (remainingTime &#60= 0) {
+              clearInterval(countdownTimer);
+              countdownElement.innerHTML = "高考加油！！！";
+              }
+              }
+          var countdownTimer = setInterval(updateCountdown, 1000);
+          </code>
+      </pre>
+      <h2>效果</h2>
+      <h3 id="countdown"></h3>
+  </div>
+  <!---------2----------->
+  <div class="code-card">
+    <h2>每日一句</h2>
+    <pre>
+      <button onclick="copyT()">复制</button>
+      <h3>Javascript</h3>
+        <code code id="codet">
+          // 定义一个数组存储每日诗词的列表
+var poems = [
+    "未来可期 人生值得",
+    "前路浩浩荡荡 万物皆可期待",
+    "不要等待 因为你不知道要等待多长时间",
+];
+
+// 获取当前日期
+var currentDate = new Date();
+
+// 使用日期的天数作为索引值从诗词数组中获取每日诗词
+var poemIndex = currentDate.getDate() % poems.length;
+var dailyPoem = poems[poemIndex];
+
+// 将每日诗词显示在 h1 元素中
+var poemTitleElement = document.getElementById("poem-title");
+poemTitleElement.textContent = dailyPoem;
+
+        </code>
+    </pre>
+</div>
+   </div>
+</body>
+<script>
+  function updateCountdown() {
+              var targetDate = new Date("2024-06-07 9:00:00");
+              var currentDate = new Date();
+              var remainingTime = targetDate - currentDate;
+              var days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+              var hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+              var minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+              var seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+              var countdownElement = document.getElementById("countdown");
+              countdownElement.innerHTML ="距离高考还有"+ days + " 天 " + hours + " 小时 " + minutes + " 分钟 " + seconds + " 秒 ";
+              if (remainingTime <= 0) {
+              clearInterval(countdownTimer);
+              countdownElement.innerHTML = "高考加油！！！";
+              }
+              }
+              var countdownTimer = setInterval(updateCountdown, 1000);
+              //----------------------------------
+              function copyToClipboard() {
+            const code = document.getElementById('code').innerText;
+            const textarea = document.createElement('textarea');
+            textarea.value = code;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            alert('文本已复制到剪贴板！');
+        }
+        
+        function copyT() {
+            const code = document.getElementById('codet').innerText;
+            const textarea = document.createElement('textarea');
+            textarea.value = code;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            alert('文本已复制到剪贴板！');
+        }
+</script>
+</html>

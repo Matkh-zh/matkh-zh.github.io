@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .nav{
+      max-width: 50px;
+      height: 100%;
+      background-color: rgb(210, 30, 180);
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 999;
+    }
+    .tx{
+      width: 40px;
+      height: 40px;
+      margin: 5px;
+      background-color: blueviolet;
+      border-radius: 50%;
+      text-align: center;
+    }
+    .btn{
+      width: 40px;
+      height: 40px;
+      margin: 5px;
+      margin-top: 30px;
+      background-color: #cccccc00;
+      border: none;
+      border-radius: 10px;
+      transition: all 0.6s;
+    }
+    .btn:hover{
+      background-color: rgba(240, 248, 255, 0.342);
+      box-shadow: 0 0 5px #333;
+    }
+    .dropdown{
+      overflow: visible;
+      width: 80px;
+      z-index: 999;
+      display: flex;
+      align-items: start;
+    }
+    .dropdown-content{
+      display: none;
+  position: absolute;
+
+  left: 60px;
+  background-color: #e7e7e7;
+  min-width:300px;
+  height: 400px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  animation: anidc 0.3s;
+  border-radius: 10px;
+  z-index: 999;
+  text-align: center;
+    }
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+@keyframes anidc {
+  0%{opacity: 0;transform: translate(-3px);}
+  100%{opacity: 1; transform: translate(0);}
+}
+.content{
+  width: 100%;
+  height: 100vh;
+  background-color: #ffb9b9;
+  position: fixed;
+  top: 0;
+  left: 50px;
+  z-index: 1;
+}
+.dropdown-content button{
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 18px;
+  text-decoration: none;
+  color: #020202;
+  border: none;
+  transition: all 0.2s;
+}
+.dropdown-content button:hover{
+  background-color: #333;
+}
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <div class="tx"><h1>Z</h1></div>
+    <div class="dropdown">
+      <button class="btn"><i class="fa fa-html5" style="font-size: 20pt;"> </i></button>
+      <div class="dropdown-content">
+        <!--Link-->
+        <button onclick="location.href = '#3'">My html</button>
+        <button onclick="location.href = '#3'">My html</button>
+        <button onclick="location.href = '#3'">My html</button>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="btn"><i class="fa fa-css3" style="font-size: 20pt;"> </i></button>
+      <div class="dropdown-content">
+        <!--Link-->
+        <button onclick="location.href = '#3'">My css</button>
+        <button onclick="location.href = '#3'">My css</button>
+        <button onclick="location.href = '#3'">My css</button>
+      </div>
+    </div>
+  </div>
+  <!--CONTENT-->
+  <div class="content">
+    <h1>Hello World</h1>
+  </div>
+</body>
+</html>
