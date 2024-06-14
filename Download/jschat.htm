@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <style>
+        body{
+            height: 100vh;
+            background-image: linear-gradient(to left top,#faf,#ffa);
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #chatbox {
+            width: 70%;
+            height: 500px;
+            overflow-y: scroll;
+            padding: 10px;
+            background-color: #74747471;
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .response {
+            background-color: #f0f0f0;
+            padding: 5px;
+            margin: 5px;
+            min-width: 50px;
+            border-radius: 5px;
+            float: left;
+            margin-right: 20%;
+            animation: tc .4s;
+        }
+        @keyframes tc {
+            0%{opacity: 0;}
+        }
+        .user-message {
+            background-color: #43FF55;
+            padding: 5px;
+            margin-left: 70%;
+            min-width: 5px;
+            border-radius: 5px;
+            float:right;
+        }
+        button{
+          outline: none;
+          width: 20%;
+          height: 44px;
+          border: none;
+          background-color: #6B77FF;
+          border-radius: 25px;
+        }
+        input[type="text"]{
+          outline: none;
+          border: none;
+          height: 44px;
+          background-color: #EEEEEE;
+          width: 75%;
+          border-radius:22px;
+          padding-left: 8px;
+        }
+        .response-e{
+            background-color: #f0f0f0;
+            padding: 5px;
+            margin: 5px;
+            min-width: 50px;
+            border-radius: 5px;
+            float: left;
+            margin-right: 20%;
+          color: #FF2B2B;
+        }
+        .chat-input{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h2>DemoJs</h2>
+    <div id="chatbox">
+         <div class="response">
+            你好！
+        </div>
+    </div>
+    <div class="chat-input"><input type="text" id="message" placeholder="请输入">
+    <button onclick="sendMessage()">发送</button></div>
+    <script>
+        const responses = {
+    "你好": "有什么可以帮到您的吗？",
+    "你是谁": "我是Js",
+};
+
+
+function sendMessage() {
+
+const message = document.getElementById('message').value.toLowerCase();
+let response = "";
+
+const chatbox = document.getElementById('chatbox');
+const userMessage = document.createElement('div');
+userMessage.textContent = message;
+userMessage.classList.add('user-message');
+chatbox.appendChild(userMessage);
+
+for (const key in responses) {
+if (message.includes(key)) {
+    response = responses[key];
+    break;
+}
+}
+
+setTimeout(function() {
+const newMessage = document.createElement('div');
+
+if (response) {
+    newMessage.textContent = response;
+    newMessage.classList.add('response');
+} else {
+    newMessage.innerHTML ='<div class="response-e">' + "错误: 这个问题暂时无法回答哦" + "</div>";
+}
+
+chatbox.appendChild(newMessage);
+document.getElementById('message').value = '';
+chatbox.scrollTop = chatbox.scrollHeight;
+}, 1000);
+
+}
+    </script>
+</body>
+</html>

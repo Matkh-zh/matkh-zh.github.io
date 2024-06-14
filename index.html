@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/tus.css">
+    <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Matkh</title>
+    <link rel="shortcut icon" href="ZAO.png" type="image/x-icon">
+</head>
+<body>
+    <div class="navbar">
+            <div class="logo"><h1>Ma</h1></div>
+<button onclick="showContent('content1')">下载</button>
+<button onclick="showContent('content2')">帮助</button>
+<button onclick="showContent('content3')">关于</button>
+
+    </div>
+    <!--WELCOME-->
+    <div id="cont" class="cont">
+        <h1>Welcome<br><span>Website</span></h1>
+    </div>
+    <!--DOWNLOAD-->
+    <div id="content1" class="content">
+        <h1 style="text-align: center;">下载</h1>
+        <div class="yellow-warn"> 
+            <h3><i class="fa fa-exclamation-circle"></i>请注意：这些仅用于学习用途</h3>
+        </div>
+        <div class="green-warn"> 
+            <h3><i class="fa fa-check-square"></i>单击卡片进入下载页面</h3>
+        </div>
+        <div class="download-card" onclick="location.href='xzmuban.html'">
+              <i class="fa fa-pencil-square"></i>
+            <h1>HTML模板</h1>
+        </div>
+ 
+        <div class="download-card" onclick="location.href='flmuban.html'">
+            <i class="fa fa-music"></i>
+          <h1>FL Studio模板</h1>
+          
+      </div>
+      
+  </div>
+    </div>
+    <!--FAQ-->
+    <div id="content2" class="content">
+        <h2>帮助</h2>
+        <h3>关于FL插件问题</h3>
+        <p>FL Studio模板中，部分插件为外置插件，未安装会导致缺失部分音色
+            <br>不过基于想象力，您仍然可以采用其他插件实现创作</p>
+    </div>
+    <!--ABOUT-->
+    <div id="content3" class="content">
+        <h2>关于MATKH</h2>
+        <img src="ZAO.png" alt="Logo">
+        <h1>Ma Website(Ver:4e)</h1>
+        <div class="red-warn"> 
+            <h3><i class="fa fa-exclamation-circle"></i>No Content</h3>
+        </div>
+    </div>
+    
+</body>
+<script>
+    function showContent(id) {
+    // 隐藏所有内容
+    let cont = document.getElementById('cont');
+    var contents = document.getElementsByClassName("content");
+    for (var i = 0; i < contents.length; i++) {
+        contents[i].style.display = "none";
+        cont.style.display = "none";
+        
+    }
+
+    // 显示指定id的内容
+    var contentToShow = document.getElementById(id);
+    if (contentToShow) {
+        contentToShow.style.display = "block";
+    }
+}
+</script>
+</html>
